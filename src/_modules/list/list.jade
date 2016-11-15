@@ -1,0 +1,12 @@
+mixin list(spec)
+	- spec = spec || {}
+	- spec.__class = spec.__class || ''
+	- spec.content = spec.content || ''
+
+	div(class=spec.__class)&attributes(attributes)
+		if spec.content
+			=spec.content
+		else
+			p.content This is example content
+
+	button.btn.btn-info Submit

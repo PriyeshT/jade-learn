@@ -1,0 +1,15 @@
+extends ../_layouts/base
+
+include ../_modules/list/list
+
+block config
+	//- Correct base url pathing for this page
+	- var baseUrl = '../'
+
+block content
+	p about page
+	+list({__class: 'blue big'})
+
+block prepend foot
+	p another footer content
+
