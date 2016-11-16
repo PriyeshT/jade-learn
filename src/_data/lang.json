@@ -1,0 +1,9 @@
+{
+	"sitename": "Jade-Learn",
+	"lang": [
+		{"name": "js"},
+		{"name": "html"},
+		{"name": "css"},
+		{"name": "jquery"}
+	]
+}

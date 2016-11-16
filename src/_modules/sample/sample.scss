@@ -1,0 +1,55 @@
+// sample styles
+
+[class^="col-"], [class*=" col-"] {
+	float: left;
+	padding: 0 10px;
+	width: 100%;
+}
+
+@mixin clearfix() {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+    }
+
+    &:after { clear: both; }
+}
+
+.row {
+	@include clearfix();
+}
+
+$boolean: true !default
+
+@mixin simple-mixin() {
+	@if $boolean {
+		display: block;
+		border: 1px solid steelblue;
+	}
+	@else {
+		display: none;
+	}
+}
+
+.custom-content{
+	@include simple-mixin();
+}
+
+$col: col;
+
+@for $i from 1 through 4{
+	.#{$col}-#{$i} {
+		width: (100%/12 * $i);
+		border: 1px solid black;
+	}
+}
+
+@each $color in tomato, steelblue, brown, cyan {
+	.#{$color}-icon {
+		background: $color;
+		height: 100%;
+	}
+}
